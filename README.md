@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Ani Theme rewritten in Meteor.js
 
 This project is a port of the famous [Free Ani AngularJS Theme](http://startangular.com/product/ani-theme/) to Meteor.js Theme.
@@ -25,3 +26,5 @@ $ meteor
 
 - Add sample AJAX calls and make the components more modular
 - Add chart examples
+=======
+# SchedFriend
