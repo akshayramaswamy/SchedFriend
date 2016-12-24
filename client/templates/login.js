@@ -1,25 +1,33 @@
-if (Meteor.isClient) {
-	Template.login.events({
-    "submit .ng-valid": function (event) {
-      // Prevent default browser form submit
-      event.preventDefault();
- 
-      Router.go('home');
+Template.login.events({
+  'click #login-button': function(e, t) {
+     e.preventDefault();
+     // Getting values from fields on page
+     var email = $('#login-email').val(),
+         password = $('#login-password').val();
+     // Calling the loginWithPassword function on the user
+     Meteor.loginWithPassword(email, password, function(error) {
+         if (error) {
+          // Returning a sweetAlert
+          return swal({
+                title: "Email or password incorrect",
+                text: "Please try again",
+                timer: 1700,
+                showConfirmButton: false,
+                type: "error"
+            });
+         } else {
+           Router.go('home');
+         }
+     });
+     return false;
+   }
+});
 
-    }
 
+Template.login.events({
+  'click #register-redirect': function(e, t) {
+     e.preventDefault();
+     Router.go('register');
+   }   
+});
 
-  });
-
-	Template.login.rendered = function(){
-		$(".login-page").addClass("ng-enter");
-		setTimeout(function(){
-			$(".login-page").addClass("ng-enter-active");
-		}, 300);
-		setTimeout(function(){
-			$(".login-page").removeClass("ng-enter");
-			$(".login-page").removeClass("ng-enter-active");
-		}, 600);
-	};
-  
-}
