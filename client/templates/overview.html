@@ -1,11 +1,18 @@
 <Template name="overview">
 	<div class="overview-page ui-view main" key="overview"> 
         <a href="/dashboard/reports" class="pull-right btn btn-primary btn-outline btn-rounded">Reports</a> 
-        <h2>Overview <small>Why is Ani Theme so awesome?</small></h2> 
+        <h2>Welcome {{currentUser.profile.firstName}}! <small> Input Your Classes and Explore Below</small></h2> 
         <div class="jumbotron"> 
-          <h1>Welcome!</h1> I don't want to bloat this Ani Theme Free Edition AngularJS Admin theme with a lot of plugins. To install plugins we have bower. Let's keep it real clean!
-          <br /><br /> 
+          <h1> {{currentUser.profile.firstName}}'s Fall Classes</h1>  CS109, CS193P, ECON1, CS193A
+	<br /><br /> 
           <p> <a class="btn btn-primary btn-lg btn-outline btn-rounded">Learn more</a> </p> 
         </div> 
     </div>
+
+
+<script language="javascript"> 
+
+	document.getElementById("name").innerHTML= "changed";
+
+</script>
 </Template>
