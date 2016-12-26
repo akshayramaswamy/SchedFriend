@@ -11,4 +11,10 @@ if(Meteor.isClient){
 			}, 600);
 		}
 	};
+
+	Template.reports.helpers({
+		courses : function() {
+			
+		}
+	});
 }
