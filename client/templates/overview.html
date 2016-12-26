@@ -1,18 +1,46 @@
-<Template name="overview">
+<template name="overview">
 	<div class="overview-page ui-view main" key="overview"> 
-        <a href="/dashboard/reports" class="pull-right btn btn-primary btn-outline btn-rounded">Reports</a> 
-        <h2>Welcome {{currentUser.profile.firstName}}! <small> Input Your Classes and Explore Below</small></h2> 
+        <a href="/dashboard/reports" class="pull-right btn btn-primary btn-outline btn-rounded">Reports</a>
+
+        <h2>Friend Search <small>Search for Peers</small></h2> 
+
+        <style type="text/css">
+        	select {
+        		margin-right: 100px;
+        	}
+        	button {
+        		margin-left: 50px;
+        	}
+        </style>
+
+      
+		<select class="selectpicker" data-style="btn-primary" data-live-search="true" id="courseSelect">
+		  <option>All Courses</option>
+		  <option>Math 51</option>
+		  <option>CS 106A</option>
+		</select>
+		<select class="selectpicker" data-style="btn-primary" data-live-search="true" id="activitySelect">
+		  <option>All Activities</option>
+		  <option>Stanford Symphony Orchestra</option>
+		  <option>Raas</option>
+		  <option>BASES</option>
+		</select>
+		<script type="text/javascript">$('.selectpicker').selectpicker();</script>
+		<button type="button" class="btn btn-primary" id="filter">Filter</button>
+		
+		 
+        <div id="main" class="row-fluid">
+      		{{> usersList}}
+    	</div>
+        <div class="jumbotron">
+          <h1>Welcome!</h1> I don't want to bloat this Ani Theme Free Edition AngularJS Admin theme with a lot of plugins. To install plugins we have bower. Let's keep it real clean!
+          <br /><br /> 
+          <p> <a class="btn btn-primary btn-lg btn-outline btn-rounded">Learn more</a> </p> 
+        </div> 
         <div class="jumbotron"> 
-          <h1> {{currentUser.profile.firstName}}'s Fall Classes</h1>  CS109, CS193P, ECON1, CS193A
-	<br /><br /> 
+          <h1>Hello!</h1> I don't want to bloat this Ani Theme Free Edition AngularJS Admin theme with a lot of plugins. To install plugins we have bower. Let's keep it real clean!
+          <br /><br /> 
           <p> <a class="btn btn-primary btn-lg btn-outline btn-rounded">Learn more</a> </p> 
         </div> 
     </div>
-
-
-<script language="javascript"> 
-
-	document.getElementById("name").innerHTML= "changed";
-
-</script>
-</Template>
+</template>
