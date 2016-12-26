@@ -5,8 +5,10 @@ Template.register.events({
      var email = $('#email').val(),
          firstName = $('#first-name').val(),
          lastName = $('#last-name').val(),
+	 university = $('#university').val();
          password = $('#password').val(),
          passwordAgain = $('#password-again').val();
+
     // Trim Helper
     var trimInput = function(val) {
        return val.replace(/^\s*|\s*$/g, "");
@@ -32,7 +34,8 @@ Template.register.events({
            email: email,
            firstName: firstName,
            lastName: lastName,
-           password: password
+           password: password,
+	   university: university,
       }, function(error) {
          if (error) {
             console.log("Error: " + error.reason);
