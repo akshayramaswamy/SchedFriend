@@ -1,15 +1,25 @@
 var usersData = [ {
-    name: 'Chetan Rane',
-    url: '/'
+    profile : {
+      firstName: 'Chetan Rane',
+      url: '/'
+    }
+    
+  }
+];
+/*
   },
   {
-    name: 'Akshay Ramaswamy',
-    url: '/'
-}, {
-    name: 'Andrew Chang',
+    firstName: 'Chetan Rane',
+      url: '/'
+  }, 
+  {
+    firstName: 'Chetan Rane',
     url: '/'
   }
 ];
+*/
 Template.usersList.helpers({
-  users: usersData
+  users: function() {
+    return Meteor.users.find().fetch();
+  }
 });
