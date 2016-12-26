@@ -11,4 +11,14 @@ if(Meteor.isClient){
 			}, 600);
 		}
 	};
+
+	Template.overview.events({
+		'click #filter': function() {
+			var course = $("#courseSelect option:selected").text();
+			var activity = $("#activitySelect option:selected").text();
+			//var course = document.getElementById("courseSelect").find("option:selected").text();
+			console.log(course);
+			console.log(activity);
+		}
+	});
 }
