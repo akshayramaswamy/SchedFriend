@@ -4,6 +4,13 @@ Accounts.onCreateUser(function(options, user) {
    // Assigns first and last names to the newly created user object
    user.profile.firstName = options.firstName;
    user.profile.lastName = options.lastName;
+
+   user.profile.university = options.university;
+   user.currentCourses = options.currentCourses;
+   //user.profPicture = options.profPicture;
+   user.profile.currentCourses = [];
+   user.profile.activities = [];
+   user.profile.profilePicture = null;
    // Returns the user object
    return user;
 });

@@ -10,6 +10,10 @@ Meteor.publish('userData', function() {
              "emails": 1,
              // Created profile property
              "profile": 1,
+//             "currentCourses":1,
+//	     "university":1,
+//	     "profPicture":1,
+	     
          }
       });
     } else {
