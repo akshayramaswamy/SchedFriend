@@ -27,3 +27,6 @@ accounts-password
 msavin:mongol
 kevohagan:sweetalert
 jesperwe:bootstrap-select
+cfs:standard-packages
+cfs:filesystem
+particle4dev:upload-avatar
