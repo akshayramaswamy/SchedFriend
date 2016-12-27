@@ -20,3 +20,5 @@ if(Meteor.isClient){
 
 	Session.set("animateChild", false);
 }
+
+//Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.name": "yogi"}});
