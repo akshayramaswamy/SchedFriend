@@ -4,30 +4,11 @@
 	    <a href="/dashboard/overview" class="pull-right btn btn-primary btn-outline btn-rounded">Back to Overview</a> 
 	    <h2> Hello, {{currentUser.profile.firstName}}! <small>Update Your Schedule Below</small></h2> 
 
-	    <h3> Your Profile : </h3>
-	    <ul class="list-group">
-		  <li class="list-group-item">{{currentUser.profile.firstName}}<button type="button" class="btn btn-primary"> X </button></li>
-		  <li class="list-group-item">                      <tr>
-                        <td>Department:</td>
-                        <td>Programming</td>
-                      </tr></li>
-		  <li class="list-group-item">Morbi leo risus</li>
-		  <li class="list-group-item">Porta ac consectetur ac</li>
-		  <li class="list-group-item">Vestibulum at eros</li>
-		</ul>
-
-	    <i class="fa fa-dashboard bg-fade"></i>
-	    <div class="jumbotron"> 
-	      <h1>Add Charts here</h1> 
-	      <p>You can use C3.js or Chart.js</p> 
-	      <p> <a class="btn btn-primary btn-lg btn-outline btn-rounded">Learn more</a> </p> 
-	    </div> 
-
 <div class="container">
 	<div class="row">
         
         
-       <div class="col-md-7 ">
+       <div class="col-md-10 ">
 
 <div class="panel panel-default">
   <div class="panel-heading">  <h4 >User Profile</h4></div>
@@ -50,13 +31,13 @@
             </div>
             <div class="col-sm-6">
             <span><h4 style="color:#00b1b1;">{{currentUser.profile.firstName}} {{currentUser.profile.lastName}} </h4></span>
-              <span><p>Aspirant</p></span>            
+              <span><p>[Major]</p></span>            
             </div>
             <div class="clearfix"></div>
             <hr style="margin:5px 0 5px 0;">
     
               
-<div class="col-sm-5 col-xs-6 tital " >First Name:</div><div class="col-sm-7 col-xs-6 ">{{currentUser.profile.firstName}}</div>
+<div class="col-sm-5 col-xs-6 tital " > First Name: </div><div class="col-sm-7 col-xs-6 ">{{currentUser.profile.firstName}}</div>
      <div class="clearfix"></div>
 <div class="bot-border"></div>
 
@@ -79,7 +60,7 @@
  <div class="clearfix"></div>
 <div class="bot-border"></div>
 
-<div class="col-sm-5 col-xs-6 tital " >Fall 2016 Courses:</div><div class="col-sm-7">{{currentUser.profile.currentCourses}}</div>
+<div class="col-sm-5 col-xs-6 tital " >Fall 2016 Courses:</div><div class="col-sm-7">{{currentUser.profile.firstName}}</div>
 
  <div class="clearfix"></div>
 <div class="bot-border"></div>
@@ -116,7 +97,90 @@
    </div>
 </div>
 
+<script>
+function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
 
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the link that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+<div class="container">
+	<div class="row">
+        
+        
+       <div class="col-md-10 ">
+
+<div class="panel panel-default">
+  <div class="panel-heading">  <h4 >{{currentUser.profile.firstName}}'s Course List</h4></div>
+   <div class="panel-body">
+       
+    <div class="box box-info">
+        
+            <div class="box-body">
+
+<ul class="tab">
+  <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, '2016')">2016</a></li>
+  <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, '2015')">2015</a></li>
+  <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, '2014')">2014</a></li>
+</ul> 
+   
+<div id="2016" class="tabcontent">
+  <h3>Fall Courses</h3>
+  <p>{{currentUser.profile.currentCourses}}</p>
+	{{>addCourse}}
+
+  <h3>Winter Courses</h3>
+  <p>London is the capital city of England.</p>
+  <h3>Spring Courses</h3>
+  <p>London is the capital city of England.</p>
+</div>
+
+<div id="2015" class="tabcontent">
+  <h3>Fall Courses</h3>
+  <p>Paris is the capital of France.</p> 
+</div>
+
+<div id="2014" class="tabcontent">
+  <h3>Fall Courses</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+              
+
+
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
+        </div>
+       
+            
+    </div> 
+    </div>
+</div>  
+    <script>
+              $(function() {
+    $('#profile-image1').on('click', function() {
+        $('#profile-image-upload').click();
+    });
+});       
+              </script> 
+</div>
+</div>
 	  </div>
 	</div>
 </template>

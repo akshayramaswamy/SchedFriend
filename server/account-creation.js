@@ -6,7 +6,8 @@ Accounts.onCreateUser(function(options, user) {
    user.profile.lastName = options.lastName;
 
    user.profile.university = options.university;
-   user.currentCourses = options.currentCourses;
+   user.profile.year = null;
+   //user.currentCourses = options.currentCourses;
    //user.profPicture = options.profPicture;
    user.profile.currentCourses = [];
    user.profile.activities = [];
