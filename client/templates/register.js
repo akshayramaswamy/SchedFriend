@@ -6,6 +6,7 @@ Template.register.events({
          firstName = $('#first-name').val(),
          lastName = $('#last-name').val(),
 	 university = $('#university').val();
+	 year = $('#year').val();
          password = $('#password').val(),
          passwordAgain = $('#password-again').val();
 
@@ -36,6 +37,7 @@ Template.register.events({
            lastName: lastName,
            password: password,
 	   university: university,
+	   year: year,
       }, function(error) {
          if (error) {
             console.log("Error: " + error.reason);

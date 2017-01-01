@@ -1,0 +1,87 @@
+<template name="settings">
+	<div key="reports" class="reports-page ui-view main">
+	  <div class="ng-scope"> 
+	    <a href="/dashboard/overview" class="pull-right btn btn-primary btn-outline btn-rounded">Back to Overview</a> 
+	    <h2> Settings <small>Update Personal Info</small></h2> 
+
+<div class="container">
+	<div class="row">
+        
+        
+       <div class="col-md-10 ">
+
+<div class="panel panel-default">
+  <div class="panel-heading">  <h4 >Profile Info</h4></div>
+   <div class="panel-body">
+       
+    <div class="box box-info">
+        
+            <div class="box-body">
+    
+              <!-- /input-group -->
+            <div class="col-sm-6">
+            <span><h4 style="color:#00b1b1;">{{currentUser.profile.firstName}} {{currentUser.profile.lastName}} </h4></span>
+              <span><p>{{currentUser.profile.year}}</p></span>            
+            </div>
+            <div class="clearfix"></div>
+            <hr style="margin:5px 0 5px 0;">
+    
+              
+<div class="col-sm-5 col-xs-6 tital " > First Name: </div><div class="col-sm-7 col-xs-6 ">{{currentUser.profile.firstName}}</div>
+     <div class="clearfix"></div>
+<div class="bot-border"></div>
+
+<div class="col-sm-5 col-xs-6 tital " >Last Name:  {{currentUser.profile.lastName}}</div><input type="text" class="col-sm-7" id="email" placeholder="Email" /> <div><a href="/dashboard/reports" id = "updateLastName" class="pull-right btn btn-primary btn-outline btn-rounded">Update</a> </div>
+  <div class="clearfix"></div>
+<div class="bot-border"></div>
+
+<div class="col-sm-5 col-xs-6 tital " >University</div><div class="col-sm-7">{{currentUser.profile.university}}</div>
+
+  <div class="clearfix"></div>
+<div class="bot-border"></div>
+
+<div class="col-sm-5 col-xs-6 tital " >Dorm</div><div class="col-sm-7">{{currentUser.profile.dorm}}</div>
+
+  <div class="clearfix"></div>
+<div class="bot-border"></div>
+
+<div class="col-sm-5 col-xs-6 tital " >Year:</div><div class="col-sm-7">{{currentUser.profile.year}}</div>
+
+  <div class="clearfix"></div>
+<div class="bot-border"></div>
+
+<div class="col-sm-5 col-xs-6 tital " >Major:</div><div class="col-sm-7">{{currentUser.profile.major}}</div>
+
+ <div class="clearfix"></div>
+<div class="bot-border"></div>
+
+
+<div class="col-sm-5 col-xs-6 tital " >Activities:</div><div class="col-sm-7">{{currentUser.profile.activities}}</div>
+<div class="clearfix"></div>
+<div class="bot-border"></div>
+<a href="/dashboard/reports" class="pull-right btn btn-primary btn-outline btn-rounded">Edit Profile</a>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
+        </div>
+       
+            
+    </div> 
+    </div>
+</div>  
+       
+       
+       
+       
+       
+       
+       
+       
+       
+   </div>
+</div>
+
+	  </div>
+	</div>
+</template>
