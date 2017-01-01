@@ -12,12 +12,19 @@ if(Meteor.isClient){
 		}
 	
 	};
-  Template.addCourse.events({
-    'click #Add-Fall-2016': function () {
-var selectValue = $("#clientsSelect").val()
-Meteor.users.update({_id: Meteor.userId()}, {$addToSet: {"profile.currentCourses": $("#courseSelect").val()}});
-    }
-  });
+  	Template.addCourse.events({
+    		'click #Add-Fall-2016': function () {
+			var selectValue = $("#clientsSelect").val()
+			Meteor.users.update({_id: Meteor.userId()}, {$addToSet: {"profile.currentCourses": $("#courseSelect").val()}});
+    		}
+  		
+	});
+  	Template.addCourse.events({
+    		'click #Remove-Fall-2016': function () {
+			var selectValue = $("#clientsSelect").val()
+			Meteor.users.update({_id: Meteor.userId()}, {$pull: {"profile.currentCourses": { $in: [$("#courseSelect").val()] }}});
+    		}
+	});
 
 
 }
