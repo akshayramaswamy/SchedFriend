@@ -1,4 +1,14 @@
 if(Meteor.isClient){
+
+	var courseList = ["All Courses", "Math 51", "CS 106A"];
+	var activityList = ["All Activities", "Stanford Symphony Orchestra", "Raas", "BASES"];
+	var majorList = ["All Majors", "Economics", "Computer Science", "Biology"];
+	Template.overview.helpers({
+		courseList : courseList,
+		activityList : activityList,
+		majorList : majorList
+	});
+
 	Template.overview.rendered = function(){
 		if(Session.get("animateChild")){
 			$(".overview-page").addClass("ng-enter");

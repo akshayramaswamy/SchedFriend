@@ -15,15 +15,19 @@
 
       
 		<select class="selectpicker" data-style="btn-primary" data-live-search="true" id="courseSelect">
-		  <option>All Courses</option>
-		  <option>Math 51</option>
-		  <option>CS 106A</option>
+			{{#each courseList}}
+				<option> {{this}} </option>
+			{{/each}}
 		</select>
 		<select class="selectpicker" data-style="btn-primary" data-live-search="true" id="activitySelect">
-		  <option>All Activities</option>
-		  <option>Stanford Symphony Orchestra</option>
-		  <option>Raas</option>
-		  <option>BASES</option>
+			{{#each activityList}}
+				<option> {{this}} </option>
+			{{/each}}
+		</select>
+		<select class="selectpicker" data-style="btn-primary" data-live-search="true" id="majorSelect">
+			{{#each majorList}}
+				<option> {{this}} </option>
+			{{/each}}
 		</select>
 		<script type="text/javascript">$('.selectpicker').selectpicker();</script>
 		<button type="button" class="btn btn-primary" id="filter">Filter</button>
