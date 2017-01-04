@@ -1,29 +1,47 @@
 if(Meteor.isClient){
-	Template.reports.rendered = function(){
+	Template.settings.rendered = function(){
 		if(Session.get("animateChild")){
-			$(".reports-page").addClass("ng-enter");
+			$(".settings-page").addClass("ng-enter");
 			setTimeout(function(){
-				$(".reports-page").addClass("ng-enter-active");
+				$(".settings-page").addClass("ng-enter-active");
 			}, 300);
 			setTimeout(function(){
-				$(".reports-page").removeClass("ng-enter");
-				$(".reports-page").removeClass("ng-enter-active");
+				$(".settings-page").removeClass("ng-enter");
+				$(".settings-page").removeClass("ng-enter-active");
 			}, 600);
 		}
 	
 	};
   	Template.settings.events({
-    		'click #updateLastName': function () {
+    		'click #updateProfile': function () {
 			//var selectValue = $("#clientsSelect").val()
-			Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.lastName": $("#lastName").val()}});
-    		}
+			if ($("#firstName").val() != ""){
+				Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.firstName": $("#firstName").val()}});
+    			}			
+			if ($("#lastName").val() != ""){
+				Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.lastName": $("#lastName").val()}});
+    			}
+    		if ($("#university").val() != ""){
+				Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.university": $("#university").val()}});
+    			}	
+     		if ($("#dorm").val() != ""){
+				Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.dorm": $("#dorm").val()}});
+    			}
+    		if ($("#year").val() != ""){
+				Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.year": $("#year").val()}});
+    			}
+    		if ($("#major").val() != ""){
+				Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.major": $("#major").val()}});
+    			}
+		}
   		
 	});
-  	Template.addCourse.events({
-    		'click #Remove-Fall-2016': function () {
-			var selectValue = $("#clientsSelect").val()
-			Meteor.users.update({_id: Meteor.userId()}, {$pull: {"profile.2016FallCourses2016": { $in: [$("#courseSelect").val()] }}});
+  	Template.settings.events({
+    		'click #updateFirstName': function () {
+			//var selectValue = $("#clientsSelect").val()
+			Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.firstName": $("#firstName").val()}});
     		}
+  		
 	});
 
 

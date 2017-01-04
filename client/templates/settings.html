@@ -27,39 +27,44 @@
             <hr style="margin:5px 0 5px 0;">
     
               
-<div class="col-sm-5 col-xs-6 tital " >First Name: </div><div class="col-sm-7 col-xs-6 ">{{currentUser.profile.firstName}}</div>
-     <div class="clearfix"></div>
-<div class="bot-border"></div>
-
-<div class="col-sm-5 col-xs-6 tital " >Last Name: </div><input type="text" class="col-sm-4" id="lastName" placeholder="{{currentUser.profile.lastName}}" /> <div><a href="/dashboard/reports" id = "updateLastName" class="pull-right btn btn-primary btn-outline btn-rounded">Update</a> </div>
+<div class="col-sm-5 col-xs-6 tital " >First Name: </div><input type="text" class="col-sm-4" id="firstName" placeholder="{{currentUser.profile.firstName}}" /> 
   <div class="clearfix"></div>
 <div class="bot-border"></div>
 
-<div class="col-sm-5 col-xs-6 tital " >University</div><div class="col-sm-7">{{currentUser.profile.university}}</div>
-
+<div class="col-sm-5 col-xs-6 tital " >Last Name: </div><input type="text" class="col-sm-4" id="lastName" placeholder="{{currentUser.profile.lastName}}" /> 
   <div class="clearfix"></div>
 <div class="bot-border"></div>
 
-<div class="col-sm-5 col-xs-6 tital " >Dorm</div><div class="col-sm-7">{{currentUser.profile.dorm}}</div>
-
+<div class="col-sm-5 col-xs-6 tital " > Email: </div><input type="text" class="col-sm-4" id="email" placeholder="{{currentUser.emails.[0].address}}" /> 
   <div class="clearfix"></div>
 <div class="bot-border"></div>
 
-<div class="col-sm-5 col-xs-6 tital " >Year:</div><div class="col-sm-7">{{currentUser.profile.year}}</div>
-
+<div class="col-sm-5 col-xs-6 tital " > Password: </div><input type="password" class="col-sm-4" id="password" placeholder="Password" /> 
   <div class="clearfix"></div>
 <div class="bot-border"></div>
 
-<div class="col-sm-5 col-xs-6 tital " >Major:</div><div class="col-sm-7">{{currentUser.profile.major}}</div>
+<div class="col-sm-5 col-xs-6 tital " >University: </div><input type="text" class="col-sm-4" id="university" placeholder="{{currentUser.profile.university}}" /> 
+  <div class="clearfix"></div>
+<div class="bot-border"></div>
+
+<div class="col-sm-5 col-xs-6 tital " >Dorm: </div><input type="text" class="col-sm-4" id="dorm" placeholder="{{currentUser.profile.dorm}}" /> 
+  <div class="clearfix"></div>
+<div class="bot-border"></div>
+
+
+
+<div class="col-sm-5 col-xs-6 tital " >Year: </div><input type="text" class="col-sm-4" id="year" placeholder="{{currentUser.profile.year}}" /> 
+  <div class="clearfix"></div>
+<div class="bot-border"></div>
+
+
+<div class="col-sm-5 col-xs-6 tital " >Major: </div><input type="text" class="col-sm-4" id="major" placeholder="{{currentUser.profile.major}}" /> 
 
  <div class="clearfix"></div>
 <div class="bot-border"></div>
 
 
-<div class="col-sm-5 col-xs-6 tital " >Activities:</div><div class="col-sm-7">{{currentUser.profile.activities}}</div>
-<div class="clearfix"></div>
-<div class="bot-border"></div>
-<a href="/dashboard/reports" class="pull-right btn btn-primary btn-outline btn-rounded">Edit Profile</a>
+<a href="/dashboard/reports" id= "updateProfile" class="pull-right btn btn-primary btn-outline btn-rounded">Update Profile</a>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
